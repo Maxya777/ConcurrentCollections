@@ -2,6 +2,7 @@ import java.util.concurrent.SynchronousQueue;
 
 public class Generator extends Thread {
 
+    private static final int FREQUENCY = 1000;
     protected SynchronousQueue<Integer> list;
 
     public Generator(SynchronousQueue<Integer> list) {
@@ -14,7 +15,7 @@ public class Generator extends Thread {
             for (int i = 1; i < 13; i++) {
                 System.out.println("Звонок " + i);
                 this.list.put(i);
-                Thread.sleep(1000);
+                Thread.sleep(FREQUENCY);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

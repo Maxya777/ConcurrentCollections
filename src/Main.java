@@ -8,7 +8,6 @@ public class Main {
         Thread generator = new Generator(list);
         generator.start();
 
-
         Thread employee = new Thread(null, new Employee(list), " Сотрудник");
         employee.start();
 
